@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <style>.b{fill:#171717}.f{fill:#fafafa}@media (prefers-color-scheme:dark){.b{fill:#ededed}.f{fill:#0a0a0a}}</style>
+  <rect class="b" width="32" height="32" rx="6"/>
+  <rect class="f" x="12" y="12" width="8" height="8"/>
+</svg>

@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+sqlalchemy>=2.0
+pillow
+python-multipart
+PyJWT>=2.8
+# AI model (install torch with CUDA first for GPU: https://pytorch.org/get-started/locally/)
+torch
+transformers>=4.44

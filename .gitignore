@@ -1,0 +1,15 @@
+node_modules/
+.next/
+__pycache__/
+*.pyc
+.venv/
+backend/campusfix.db
+backend/uploads/
+.env*
+!.env.example
+
+# Local tooling / artifacts
+.claude/
+skills-lock.json
+.playwright-mcp/
+*.log
