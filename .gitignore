@@ -13,3 +13,8 @@ backend/uploads/
 skills-lock.json
 .playwright-mcp/
 *.log
+
+# Office lock files and editable deck drafts
+~$*
+pitch/*.pptx
+pitch/source/

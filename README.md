@@ -249,17 +249,18 @@ Example `/api/analyze` response:
 
 ## Demo flow (7 minutes)
 
-0. **Log in (10s).** Click **Log in**, then **Continue as student**.
-1. **Landing page (30s).** Read the tagline and show the "Why not Google Forms?" table.
-2. Click **Report an Issue**.
-3. **Duplicate path.** Pick the *Water leak* sample, choose **Block B**, type "water leaking near washroom" and click **Analyze with AI**.
-4. Show the pipeline steps, then the result: **Plumbing 90%**, priority with its reasons, routing to **Plumbing Maintenance**, and **"Possible existing issue found: CF-1001, 99% match"**.
-5. Click **Support existing ticket**. The tracking page shows the merged report and the escalated priority.
-6. **New-issue path.** Report again with the *Exposed wiring* sample, choose **Cafeteria** and type "wires hanging, saw sparks". It comes back **Critical** and routed to Electrical. Click **Confirm & create ticket**.
-7. Click **Log out**, then **Continue as admin** on the login page. The new ticket is highlighted near the top of the **priority queue**.
-8. Point out the **recurring insight**: "Recurring plumbing issue in Block B… inspect the underlying pipe system."
-9. Open the ticket and click **Start work**, then **Mark resolved** with remarks (and optionally an after-photo). Show the timeline.
-10. Open **Analytics & Hotspots** to show the hotspot map, the category, priority and trend charts, and the department workload.
+Run `python seed.py` in `backend/` just before presenting so the data is fresh.
+
+1. **Landing page (30s).** Read the tagline, scroll to "One photo in. A routed ticket out." and the "Why not a Google Form?" table.
+2. **Log in as a student (10s).** Click **Log in**, then **Continue as student**. You land on **Report an issue**.
+3. **Duplicate path (90s).** Pick the *Water leak* sample, choose **Block B**, and click **Analyze photo**. Show the pipeline steps, then the result: **Plumbing, 99% confidence**, the priority with its written reasons, routed to **Plumbing Maintenance**, and the model caption **CLIP ViT-H/14 · cuda**. Below it: **"This issue is already reported."** with the match to **CF-1001**.
+4. Click **Support existing ticket**. The tracking page shows the merged report and the escalated priority.
+5. **New-issue path (60s).** Report the *Exposed wiring* sample at **Cafeteria** and type "wires hanging, saw sparks". It comes back **Electrical, Critical** and routed to **Electrical Maintenance**. Click **Create ticket**.
+6. **Switch to admin (10s).** Open the avatar menu, **Log out**, then **Continue as admin**. The new ticket is highlighted near the top of the **priority queue**.
+7. Point out the **recurring-fault alert**: "Plumbing has failed 4 times in Block B this month. Inspect the underlying pipe system instead of temporary repair."
+8. **Admin actions (90s).** Open the new ticket. Use **Change** next to *Team* to re-route it with a reason (it appears in the history). Then **Start work** and **Mark resolved** with remarks, optionally an after-photo.
+9. **Notifications (30s).** Log back in as the student and open the **bell**: every update to their tickets is listed there.
+10. **Analytics (30s).** As admin, open **Analytics** for the hotspot map, category, building and priority breakdowns, the 7-day trend and team workload.
 
 ## Jury Q&A cheat sheet
 
@@ -281,12 +282,17 @@ Example `/api/analyze` response:
 
 ## Team
 
-| Name | Role |
+**Team Adamya**, Dronacharya College of Engineering (DCE), Gurugram
+
+| Name | Passout year |
 |---|---|
-| _Member 1_ | _Role_ |
-| _Member 2_ | _Role_ |
-| _Member 3_ | _Role_ |
-| _Member 4_ | _Role_ |
+| Parth Sharma | 2029 |
+| Shrey Kataria | 2029 |
+| Aishwarya Upadhyay | 2028 |
+| Shresth Kataria | 2029 |
+| Monishka Yadav | 2029 |
+
+Pitch deck: `pitch/AIML_TeamAdamya_ReThink26.pdf`
 
 ---
 
