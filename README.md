@@ -370,9 +370,10 @@ Run `python -m app.seed` in `backend/` right before presenting so the data is fr
 | Name | Role |
 |---|---|
 | **Parth Sharma** | Team lead · AI, backend & frontend |
-| Shrey Kataria | Testing, QA & documentation |
-| Aishwarya Upadhyay | Pitch deck, design & research |
+| Shrey Kataria | Testing & QA |
+| Aishwarya Upadhyay | Pitch deck & design |
 | Shresth Kataria | Data & photo collection |
+| Saksham Sharma | Research & documentation |
 
 ## Acknowledgements
 
