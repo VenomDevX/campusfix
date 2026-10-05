@@ -284,13 +284,13 @@ Run `python seed.py` in `backend/` just before presenting so the data is fresh.
 
 **Team Adamya**, Dronacharya College of Engineering (DCE), Gurugram
 
-| Name | Passout year |
-|---|---|
-| Parth Sharma | 2029 |
-| Shrey Kataria | 2029 |
-| Aishwarya Upadhyay | 2028 |
-| Shresth Kataria | 2029 |
-| Monishka Yadav | 2029 |
+| Name | Role | Passout year |
+|---|---|---|
+| Parth Sharma | Team lead · AI, backend & frontend | 2029 |
+| Shrey Kataria | Testing & QA | 2029 |
+| Aishwarya Upadhyay | Pitch deck & design | 2028 |
+| Shresth Kataria | Data & photo collection | 2029 |
+| Monishka Yadav | Research & documentation | 2029 |
 
 Pitch deck: `pitch/AIML_TeamAdamya_ReThink26.pdf`
 
