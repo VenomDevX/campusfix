@@ -23,7 +23,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![SQLite](https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white)
 
-**[Features](#features) · [Screenshots](#screenshots) · [How it works](#how-it-works) · [Quick start](#quick-start) · [API](#api-reference) · [Pitch deck](docs/pitch/AIML_TeamAdamya_ReThink26.pdf)**
+**[Features](#features) · [Screenshots](#screenshots) · [How it works](#how-it-works) · [Quick start](#quick-start) · [API](#api-reference)**
 
 <br>
 
@@ -197,6 +197,7 @@ All three classify equally well; only ViT-H reliably tells *"the same leak, phot
 │   ├── tests/
 │   │   └── test_pipeline.py     # pipeline, auth and (optional) model checks
 │   └── requirements.txt
+├── .githooks/pre-commit         # blocks commits of private files (ID cards, pitch deck, secrets)
 ├── frontend/
 │   ├── app/
 │   │   ├── (public)/            # landing, login, signup, report, track, my-reports
@@ -207,8 +208,7 @@ All three classify equally well; only ViT-H reliably tells *"the same leak, phot
 │   └── public/samples/          # demo issue photos
 └── docs/
     ├── assets/                  # logo and banner
-    ├── screenshots/             # README screenshots
-    └── pitch/                   # pitch deck (PDF + PPTX)
+    └── screenshots/             # README screenshots
 ```
 
 ## Quick start
@@ -261,6 +261,8 @@ Sign-up always creates a student; admin accounts are provisioned by the college.
 | `CAMPUSFIX_MODEL` | `clip-h` | `clip` (ViT-L/14), `siglip2`, or `heuristic` (no model). |
 | `DATABASE_URL` | `backend/campusfix.db` | Point at Postgres / Supabase. |
 | `API_ORIGIN` (frontend) | `http://127.0.0.1:8000` | Where Next.js proxies `/api` and `/uploads`. |
+
+> **Private files:** ID cards, the pitch deck, `.env` files, keys and local databases are git-ignored, and a pre-commit hook refuses them even with `git add -f`. After cloning, enable it once with `git config core.hooksPath .githooks`.
 
 > **Tip:** on Windows, run uvicorn without `--reload` for demos; the reloader can leave orphan workers holding port 8000. After schema changes, delete `backend/campusfix.db` once (SQLite tables are created, never altered).
 
@@ -372,8 +374,6 @@ Run `python -m app.seed` in `backend/` right before presenting so the data is fr
 | Aishwarya Upadhyay | Pitch deck & design |
 | Shresth Kataria | Data & photo collection |
 | Monishka Yadav | Research & documentation |
-
-📑 Pitch deck: [`docs/pitch/AIML_TeamAdamya_ReThink26.pdf`](docs/pitch/AIML_TeamAdamya_ReThink26.pdf)
 
 ## Acknowledgements
 

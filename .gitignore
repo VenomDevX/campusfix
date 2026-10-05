@@ -5,8 +5,6 @@ __pycache__/
 .venv/
 backend/campusfix.db
 backend/uploads/
-.env*
-!.env.example
 
 # Local tooling / artifacts
 .claude/
@@ -14,9 +12,34 @@ skills-lock.json
 .playwright-mcp/
 *.log
 
-# Office lock files and editable deck drafts
-~$*
-docs/pitch/source/
-
-# Personal documents (ID cards) - never commit
+# ---------------------------------------------------------------
+# PRIVATE - never commit or push (also enforced by .githooks/pre-commit)
+# ---------------------------------------------------------------
+# Personal documents (ID cards)
 idcard/
+idcards/
+# Pitch deck and its sources (submitted privately, not published)
+pitch/
+docs/pitch/
+*.pptx
+*.potx
+# Office lock files
+~$*
+# Secrets and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets*
+credentials*.json
+service-account*.json
+# Local data: database, uploads, model caches
+*.db
+*.sqlite
+*.sqlite3
+backend/uploads/
+.cache/
+hf_cache/

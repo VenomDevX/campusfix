@@ -1,0 +1,12 @@
+#!/bin/sh
+# Blocks commits that include private files, even when added with `git add -f`.
+# Enabled per clone with:  git config core.hooksPath .githooks
+blocked=$(git diff --cached --name-only --diff-filter=ACMR | grep -iE \
+  '(^|/)(idcards?|pitch)/|\.(pptx|potx|pem|key|p12|pfx|db|sqlite3?)$|(^|/)\.env($|\.)|(^|/)(secrets|credentials|service-account)[^/]*$' \
+  | grep -v '\.env\.example$')
+if [ -n "$blocked" ]; then
+  echo "Commit blocked: these files are private (ID cards, pitch deck, secrets, local data):"
+  echo "$blocked" | sed 's/^/  - /'
+  echo "Unstage them with: git restore --staged <file>"
+  exit 1
+fi
