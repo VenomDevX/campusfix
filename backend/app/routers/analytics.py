@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from database import get_db
-from services import analytics_service as svc
-from services.auth import require_admin
+from app.database import get_db
+from app.services import analytics_service as svc
+from app.services.auth import require_admin
 
 router = APIRouter(prefix="/api/analytics", tags=["analytics"], dependencies=[Depends(require_admin)])
 

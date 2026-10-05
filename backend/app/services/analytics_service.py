@@ -6,9 +6,9 @@ from datetime import datetime, timedelta
 
 from sqlalchemy.orm import Session
 
-from models import Issue, IssueReport
-from services.duplicate_detector import OPEN_STATUSES
-from services.priority_engine import LOCATIONS
+from app.models import Issue, IssueReport
+from app.services.duplicate_detector import OPEN_STATUSES
+from app.services.priority_engine import LOCATIONS
 
 RECURRING_MIN = 3
 RECURRING_DAYS = 30

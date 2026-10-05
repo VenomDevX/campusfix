@@ -5,12 +5,12 @@ from datetime import datetime, timedelta
 
 from sqlalchemy.orm import Session
 
-import sample_images
-from database import UPLOAD_DIR
-from models import Department, User
-from services.auth import hash_password
-from services import pipeline, tickets
-from services.routing_engine import DEPARTMENTS
+from app import sample_images
+from app.database import SAMPLES_DIR, UPLOAD_DIR
+from app.models import Department, User
+from app.services.auth import hash_password
+from app.services import pipeline, tickets
+from app.services.routing_engine import DEPARTMENTS
 
 # Demo accounts shown on the login page.
 DEMO_USERS = [
@@ -79,11 +79,11 @@ def seed(db: Session):
         for k, status in enumerate(path, 1):
             tickets.change_status(issue, status, remarks=remark if status == "Resolved" else "", db=db, at=at + step * k + timedelta(hours=supports))
     db.commit()
-    sample_images.export_samples(UPLOAD_DIR.parent.parent / "frontend" / "public" / "samples")
+    sample_images.export_samples(SAMPLES_DIR)
 
 
 if __name__ == "__main__":
-    from database import Base, SessionLocal, engine
+    from app.database import Base, SessionLocal, engine
 
     Base.metadata.drop_all(engine)
     Base.metadata.create_all(engine)

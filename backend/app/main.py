@@ -4,12 +4,12 @@ from fastapi import Depends, FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
-from database import UPLOAD_DIR, Base, SessionLocal, engine
-from models import Issue
-from routers import analytics, auth, issues, notifications
-from services import vision_model
-from services.auth import csrf_guard
-from services.priority_engine import LOCATIONS
+from app.database import UPLOAD_DIR, Base, SessionLocal, engine
+from app.models import Issue
+from app.routers import analytics, auth, issues, notifications
+from app.services import vision_model
+from app.services.auth import csrf_guard
+from app.services.priority_engine import LOCATIONS
 
 
 @asynccontextmanager
@@ -18,7 +18,7 @@ async def lifespan(app: FastAPI):
     vision_model.warm_up_async()  # load CLIP on the GPU in the background
     with SessionLocal() as db:
         if db.query(Issue).count() == 0:
-            from seed import seed
+            from app.seed import seed
             seed(db)
     yield
 

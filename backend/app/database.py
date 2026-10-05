@@ -6,7 +6,9 @@ from sqlalchemy.orm import DeclarativeBase, sessionmaker
 
 # SQLite for the prototype. Point DATABASE_URL at Postgres/Supabase to migrate —
 # models use only portable column types.
-DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./campusfix.db")
+# backend/ folder: data paths don't depend on where the server is launched from.
+BASE_DIR = Path(__file__).resolve().parent.parent
+DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{(BASE_DIR / 'campusfix.db').as_posix()}")
 
 engine = create_engine(
     DATABASE_URL,
@@ -28,5 +30,6 @@ def get_db():
 
 
 # Uploaded images live on local disk for the prototype (swap for S3/Supabase Storage).
-UPLOAD_DIR = Path(__file__).parent / "uploads"
+UPLOAD_DIR = BASE_DIR / "uploads"
+SAMPLES_DIR = BASE_DIR.parent / "frontend" / "public" / "samples"
 UPLOAD_DIR.mkdir(exist_ok=True)

@@ -3,9 +3,9 @@ from datetime import datetime
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 
-from database import get_db
-from models import Notification, User
-from services.auth import current_user
+from app.database import get_db
+from app.models import Notification, User
+from app.services.auth import current_user
 
 router = APIRouter(prefix="/api/notifications", tags=["notifications"])
 

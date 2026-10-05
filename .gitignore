@@ -16,8 +16,7 @@ skills-lock.json
 
 # Office lock files and editable deck drafts
 ~$*
-pitch/*.pptx
-pitch/source/
+docs/pitch/source/
 
 # Personal documents (ID cards) - never commit
 idcard/

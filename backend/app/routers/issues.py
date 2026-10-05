@@ -4,12 +4,12 @@ from fastapi import APIRouter, Depends, File, Form, HTTPException, UploadFile
 from pydantic import BaseModel, Field
 from sqlalchemy.orm import Session
 
-from database import get_db
-from models import Department, Issue, IssueReport, User
-from schemas import STATUSES, AnalyzeResponse, IssueCreate, IssueDetail, IssueOut, SupportCreate
-from services import pipeline, tickets
-from services.auth import current_user, require_admin
-from services.duplicate_detector import OPEN_STATUSES
+from app.database import get_db
+from app.models import Department, Issue, IssueReport, User
+from app.schemas import STATUSES, AnalyzeResponse, IssueCreate, IssueDetail, IssueOut, SupportCreate
+from app.services import pipeline, tickets
+from app.services.auth import current_user, require_admin
+from app.services.duplicate_detector import OPEN_STATUSES
 
 router = APIRouter(prefix="/api", tags=["issues"])
 

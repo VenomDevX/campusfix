@@ -12,7 +12,7 @@ from dataclasses import dataclass
 
 from PIL import Image, ImageStat
 
-from services import vision_model
+from app.services import vision_model
 
 CATEGORIES = ["Plumbing", "Electrical", "Furniture", "Sanitation", "Infrastructure", "Other"]
 

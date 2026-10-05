@@ -5,8 +5,8 @@ from datetime import datetime
 
 from sqlalchemy.orm import Session
 
-from models import Department, Issue, IssueReport, Notification, Resolution, StatusHistory
-from services.pipeline import Analysis, rescore
+from app.models import Department, Issue, IssueReport, Notification, Resolution, StatusHistory
+from app.services.pipeline import Analysis, rescore
 
 # Allowed admin transitions. Keeps the lifecycle honest (no Resolved -> Assigned jumps).
 TRANSITIONS = {

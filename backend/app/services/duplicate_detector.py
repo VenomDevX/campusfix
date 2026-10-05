@@ -57,7 +57,7 @@ def clip_similarity(e1: list[float], e2: list[float], floor: float | None = None
     """Cosine of two L2-normalised embeddings, rescaled from [floor, 1] to [0, 1]
     (unrelated photos rarely score below the model's floor)."""
     if floor is None:
-        from services import vision_model
+        from app.services import vision_model
         m = vision_model.get_model()
         floor = m.floor if m else 0.5
     cos = sum(a * b for a, b in zip(e1, e2))

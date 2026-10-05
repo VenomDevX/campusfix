@@ -9,11 +9,11 @@ os.environ["CAMPUSFIX_MODEL"] = "heuristic"
 from datetime import datetime
 from types import SimpleNamespace
 
-import sample_images
-from services.ai_classifier import classify
-from services.duplicate_detector import dhash, find_duplicate, image_similarity
-from services.priority_engine import score_priority
-from services.routing_engine import route
+from app import sample_images
+from app.services.ai_classifier import classify
+from app.services.duplicate_detector import dhash, find_duplicate, image_similarity
+from app.services.priority_engine import score_priority
+from app.services.routing_engine import route
 
 # Priority: spec examples
 assert score_priority("Electrical", "Cafeteria", "sparks from switch", support_count=3).level == "Critical"
@@ -44,7 +44,7 @@ assert route("Plumbing") == "Plumbing Maintenance" and route("Other") == "Genera
 print("All pipeline checks passed.")
 
 # Auth: password hashing and signed tokens
-from services.auth import hash_password, make_token, read_token, verify_password
+from app.services.auth import hash_password, make_token, read_token, verify_password
 
 h = hash_password("student123")
 assert verify_password("student123", h) and not verify_password("wrong", h)
@@ -59,9 +59,9 @@ assert read_token(jwt.encode({"sub": "7", "exp": 9999999999}, "attacker-key", al
 print("Auth checks passed.")
 
 if os.getenv("CAMPUSFIX_TEST_CLIP") == "1":
-    from services import vision_model
+    from app.services import vision_model
     os.environ["CAMPUSFIX_MODEL"] = os.getenv("CAMPUSFIX_TEST_MODEL", vision_model.DEFAULT_MODEL)
-    from services.duplicate_detector import clip_similarity
+    from app.services.duplicate_detector import clip_similarity
 
     m = vision_model.get_model()
     assert m, "CLIP failed to load"

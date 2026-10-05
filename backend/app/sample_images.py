@@ -137,5 +137,6 @@ def export_samples(out_dir: Path):
 
 
 if __name__ == "__main__":
-    export_samples(Path(__file__).parent.parent / "frontend" / "public" / "samples")
+    from app.database import SAMPLES_DIR
+    export_samples(SAMPLES_DIR)
     print("samples written")

@@ -16,8 +16,8 @@ import jwt
 from fastapi import Depends, Header, HTTPException, Request, Response
 from sqlalchemy.orm import Session
 
-from database import get_db
-from models import User
+from app.database import get_db
+from app.models import User
 
 log = logging.getLogger("campusfix.auth")
 

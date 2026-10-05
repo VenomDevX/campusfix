@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="72" viewBox="0 0 360 72" role="img" aria-label="CampusFix AI">
+  <rect x="4" y="12" width="48" height="48" rx="11" fill="#EDEDED"/>
+  <rect x="19" y="27" width="18" height="18" fill="#0A0A0A"/>
+  <text x="68" y="47" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#EDEDED" letter-spacing="-0.5">CampusFix <tspan fill="#52A8FF">AI</tspan></text>
+</svg>

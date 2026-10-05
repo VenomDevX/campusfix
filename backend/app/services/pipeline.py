@@ -10,11 +10,11 @@ from datetime import datetime
 
 from PIL import Image, UnidentifiedImageError
 
-from database import UPLOAD_DIR
-from services.ai_classifier import classify
-from services.duplicate_detector import DuplicateMatch, dhash, find_duplicate
-from services.priority_engine import LOCATIONS, PriorityResult, score_priority
-from services.routing_engine import route
+from app.database import UPLOAD_DIR
+from app.services.ai_classifier import classify
+from app.services.duplicate_detector import DuplicateMatch, dhash, find_duplicate
+from app.services.priority_engine import LOCATIONS, PriorityResult, score_priority
+from app.services.routing_engine import route
 
 MAX_BYTES = 8 * 1024 * 1024
 MIN_SIDE = 64
